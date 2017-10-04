@@ -15,7 +15,7 @@ public class LoginDAO {
 		 DBConnector db = new DBConnector();
 		 //説j族状態を保持
 		 Connection con = db.getConnection();
-		 String sql = "select * from uers where username = ? and password = ?";
+		 String sql = "select * from users where username = ? and password = ?";
 
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -25,7 +25,7 @@ public class LoginDAO {
 
 			if (rs.next()){
 				this.username=rs.getString("username");
-				this.username=rs.getString("password");
+				this.password=rs.getString("password");
 			}
 		}catch(SQLException e){
 			e.printStackTrace();
