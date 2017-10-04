@@ -24,8 +24,8 @@ public class LoginDAO {
 			ResultSet rs = ps.executeQuery();
 
 			if (rs.next()){
-				username=rs.getString("username");
-				username=rs.getString("password");
+				this.username=rs.getString("username");
+				this.username=rs.getString("password");
 			}
 		}catch(SQLException e){
 			e.printStackTrace();
