@@ -1,5 +1,6 @@
 package com.internousdev.login.action;
 
+import com.internousdev.login.dao.LoginDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport{
@@ -9,8 +10,9 @@ public class LoginAction extends ActionSupport{
 	public String execute(){
 		String ret = ERROR;
 
-		if(username.equals("taro")){
-			if(password.equals("123")){
+		LoginDAO dao=new LoginDAO();
+		if(username.equals("dao.username")){
+			if(password.equals("dao.password")){
 				ret = SUCCESS;
 			}
 		}
