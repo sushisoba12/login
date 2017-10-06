@@ -1,11 +1,16 @@
 package com.internousdev.login.action;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.login.dao.LoginDAO;
 import com.opensymphony.xwork2.ActionSupport;
+public class LoginAction extends ActionSupport implements SessionAware{
 
-public class LoginAction extends ActionSupport{
+
 	private String username;
 	private String password;
+	private Map <String,Object> session;
 
 	public String execute(){
 		String ret = ERROR;
@@ -15,6 +20,21 @@ public class LoginAction extends ActionSupport{
 		if(b==true){
 			if(username.equals(dao.username)){
 				if(password.equals(dao.password)){
+					session.put("username","taro");
+					System.out.println((String)session.get("username"));
+					session.put("password","123");
+					System.out.println((String)session.get("password"));
+
+					session.put("username","jiro");
+					System.out.println((String)session.get("username"));
+					session.put("password","456");
+					System.out.println((String)session.get("password"));
+
+					session.put("username","hanako");
+					System.out.println((String)session.get("username"));
+					session.put("password","789");
+					System.out.println((String)session.get("password"));
+
 					ret=SUCCESS;
 				}
 			}
@@ -36,7 +56,6 @@ public class LoginAction extends ActionSupport{
 		this.username = username;
 	}
 
-
 	public String getPassword() {
 		return password;
 	}
@@ -44,4 +63,11 @@ public class LoginAction extends ActionSupport{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public Map<String, Object> getSession() {
+		return session;
+	}
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
 }

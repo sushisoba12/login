@@ -9,8 +9,8 @@
 </head>
 <body>
 <form action="LoginAction">
-<input type="text" name="username" value="taro"/>
-<input type="password" name ="password" value="123"/>
+<input type="text" name="username" />
+<input type="password" name ="password" />
 <input type="submit" value="ログイン"/>
 </form>
 <!--

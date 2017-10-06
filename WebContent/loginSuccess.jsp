@@ -9,6 +9,6 @@
 </head>
 <body>
 <h1>ログインに成功しました。</h1>
-<s:property value="username"/>さん。
+<s:property value="#session.username"/>さん。<!-- #session. は決まり文句 -->
 </body>
 </html>
